@@ -10,7 +10,7 @@ export default function TodoList() {
     <>
         <TodoField newTask={handlerAddValueEvent}/>
         <p>
-        {items}
+        {items.map(item=><div>{item}</div>)}
         </p>
     </>
   )
