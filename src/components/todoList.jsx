@@ -1,18 +1,19 @@
-import React, { useState } from 'react'
-import TodoField from './todoField';
+import React, { useState } from "react";
+import TodoField from "./todoField";
 
 export default function TodoList() {
-        const [items, setArray] = useState([]);
-        const handlerAddValueEvent = (val) => {
-            setArray([...items, val])
-        }
+  const [items, setArray] = useState([]);
+  const handlerAddValueEvent = (val) => {
+    setArray([...items, val]);
+  };
   return (
     <>
-        <TodoField newTask={handlerAddValueEvent}/>
-        <p>
-        {items.map(item=><div>{item}</div>)}
-        </p>
+      <TodoField newTask={handlerAddValueEvent} />
+      <p>
+        {items.map((item) => (
+          <div>{item}</div>
+        ))}
+      </p>
     </>
-  )
+  );
 }
-
