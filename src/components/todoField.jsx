@@ -7,8 +7,9 @@ function TodoField(props) {
   const taskRef = useRef("");
   const addValue = (e) => {
     props.newTask(taskRef.current.value);
-    e.preventDefault(taskRef.current.value);
     taskRef.current.value = null;
+    e.preventDefault(taskRef.current.value);
+    
   };
   return (
     <>
@@ -18,7 +19,7 @@ function TodoField(props) {
         inputRef={taskRef}
         size="medium"
         onKeyDown={(e) => {
-          if (e.code === "Enter") {
+          if (e.code === 'Enter') {
             addValue();
           }
         }}
