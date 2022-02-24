@@ -1,5 +1,6 @@
-import { Button, TextField } from "@mui/material";
+import { Divider, IconButton, Paper } from "@mui/material";
 import AddBoxIcon from "@mui/icons-material/AddBox";
+import InputBase from "@mui/material/InputBase";
 
 import React, { useRef } from "react";
 
@@ -8,25 +9,31 @@ function TodoField(props) {
   const addValue = (e) => {
     props.newTask(taskRef.current.value);
     taskRef.current.value = null;
-    e.preventDefault(taskRef.current.value);
-    
+    e.preventDefault();
   };
   return (
     <>
-      <TextField
-        label="Add your task"
-        required
-        inputRef={taskRef}
-        size="medium"
-        onKeyDown={(e) => {
-          if (e.code === 'Enter') {
-            addValue();
-          }
-        }}
-      />
-      <Button endIcon={<AddBoxIcon />} onClick={addValue} size="large">
-        Add
-      </Button>
+      <Paper
+        component="form"
+        sx={{ p: "2px 4px", display: "flex", alignItems: "center", width: 400 }}
+        onSubmit={addValue}
+      >
+        <InputBase
+          sx={{ ml: 1, flex: 1 }}
+          placeholder="Add new task"
+          required
+          inputRef={taskRef}
+        />
+        <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+        <IconButton
+          color="primary"
+          sx={{ p: "10px" }}
+          aria-label="directions"
+          onClick={addValue}
+        >
+          <AddBoxIcon />
+        </IconButton>
+      </Paper>
     </>
   );
 }

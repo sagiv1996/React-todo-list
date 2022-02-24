@@ -17,7 +17,14 @@ export default function TodoList() {
     setArray(updateTodos);
   };
   return (
-    <Card sx={{maxWidth: 400, bgcolor: 'background.paper', margin: "50px auto", paddingTop: 1 }}>
+    <Card
+      sx={{
+        maxWidth: 400,
+        bgcolor: "background.paper",
+        margin: "50px auto",
+        paddingTop: 1,
+      }}
+    >
       <TodoField newTask={handlerAddValueEvent} />
       <List>
         {items.map((item, index) => (
@@ -29,6 +36,6 @@ export default function TodoList() {
           />
         ))}
       </List>
-    </Card >
+    </Card>
   );
 }
