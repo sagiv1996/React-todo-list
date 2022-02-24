@@ -8,6 +8,7 @@ function TodoField(props) {
   const addValue = (e) => {
     props.newTask(taskRef.current.value);
     e.preventDefault(taskRef.current.value);
+    taskRef.current.value = null;
   };
   return (
     <>
