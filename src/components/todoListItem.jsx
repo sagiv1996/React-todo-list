@@ -11,7 +11,6 @@ import DeleteIcon from "@mui/icons-material/Delete";
 export default function TodoListItem(props) {
   const handleChangeCompleted = (e) => {
     props.updateTask(props.index, !props.item.completed);
-    e.preventDefault(props.index, !props.item.completed);
   };
 
   const handlerDeleteClick = (e) => {
