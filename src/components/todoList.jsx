@@ -1,4 +1,4 @@
-import { List } from "@mui/material";
+import { Card, List } from "@mui/material";
 import React, { useState } from "react";
 import TodoField from "./todoField";
 import TodoListItem from "./todoListItem";
@@ -17,7 +17,7 @@ export default function TodoList() {
     setArray(updateTodos);
   };
   return (
-    <>
+    <Card sx={{maxWidth: 400, bgcolor: 'background.paper', margin: "50px auto", paddingTop: 1 }}>
       <TodoField newTask={handlerAddValueEvent} />
       <List>
         {items.map((item, index) => (
@@ -29,6 +29,6 @@ export default function TodoList() {
           />
         ))}
       </List>
-    </>
+    </Card >
   );
 }
