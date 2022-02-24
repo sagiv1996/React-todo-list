@@ -17,9 +17,9 @@ function TodoField(props) {
         required
         inputRef={taskRef}
         size="medium"
-        onKeyDown={(e) =>{
-          if(e.code === 'Enter'){
-            addValue()
+        onKeyDown={(e) => {
+          if (e.code === "Enter") {
+            addValue();
           }
         }}
       />
