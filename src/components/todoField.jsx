@@ -17,6 +17,11 @@ function TodoField(props) {
         required
         inputRef={taskRef}
         size="medium"
+        onKeyDown={(e) =>{
+          if(e.code === 'Enter'){
+            addValue()
+          }
+        }}
       />
       <Button endIcon={<AddBoxIcon />} onClick={addValue} size="large">
         Add
